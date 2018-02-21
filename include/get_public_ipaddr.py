@@ -4,12 +4,12 @@ class Get_public_ip:
   socket.setdefaulttimeout(5)
   def getip(self):
     try:
-      myip = self.visit("http://ip.taobao.com/ipSearch.php")
+      myip = self.visit("http://whatismyip.akamai.com/")
     except:
       try:
-        myip = self.visit("http://ipv4.icanhazip.com/")
+        myip = self.visit("http://ifconfig.io/")
       except:
-        myip = "So sorry!!!"
+        myip = "0.0.0.0"
     return myip
   def visit(self,url):
     opener = urllib2.urlopen(url)
